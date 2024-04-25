@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d41e2252f4553bd47a2d32f6bda7b2b9, type: 3}
+  m_Name: BaseConsoleSpace
+  m_EditorClassIdentifier: 
+  _commands:
+  - {fileID: 11400000, guid: b3e8632b97d578d4ba9234690f9a865f, type: 2}
+  _name: Base console space
+  _header: This is the base command
+  _closer: 
