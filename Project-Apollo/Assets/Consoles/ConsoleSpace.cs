@@ -10,12 +10,6 @@ public class ConsoleSpace : ScriptableObject
     [SerializeField] private string _name;
     [SerializeField] [TextArea(5,20)] private string _header;
     [SerializeField] [TextArea(5,20)] private string _closer;
-    private ConsoleText _text;
-    private void Start() 
-    {
-        _text = ConsoleText._instance;
-        _text.AddText(_header);
-    }
 
     // Pushes a command to the console
     public string PushCommand(string text)

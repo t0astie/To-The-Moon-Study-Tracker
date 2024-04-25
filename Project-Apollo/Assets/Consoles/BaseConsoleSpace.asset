@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _commands:
   - {fileID: 11400000, guid: b3e8632b97d578d4ba9234690f9a865f, type: 2}
+  - {fileID: 11400000, guid: e219d7917105aef46bdeeb9f89a1ba53, type: 2}
   _name: Base console space
   _header: This is the base command
   _closer: 

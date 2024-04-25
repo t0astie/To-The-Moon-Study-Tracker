@@ -7,7 +7,7 @@ using UnityEditor.U2D.Path;
 
 public class ConsoleText : MonoBehaviour
 {
-    public static ConsoleText _instance;
+    public static ConsoleText Instance;
     [SerializeField] private TextMeshProUGUI _text;
     [SerializeField] private TMP_InputField _input;
     private int _rows;
@@ -17,28 +17,25 @@ public class ConsoleText : MonoBehaviour
 
     private void OnEnable() 
     {
-        if (_instance != null)
+        if (Instance != null)
         {
-            Destroy(_instance);
+            Destroy(Instance);
         }
         else
         {
-            _instance = this;
+            Instance = this;
         }
     }
 
     private void Start() 
     {
         _consoleSpace.Add(_baseConsole);
+        AddText(_baseConsole.Header);
     }
 
     private void Update() 
     {
         _input.ActivateInputField();
-        if (_input.text.Length <= 0)
-        {
-            return;
-        }
 
         // Get the user input
         if (Input.GetKeyDown(KeyCode.KeypadEnter) || Input.GetKeyDown(KeyCode.Return))
@@ -47,7 +44,12 @@ public class ConsoleText : MonoBehaviour
             string command = _input.text;
 
             AddText(command);
-            _input.text = "";
+            _input.text = ">";
+
+            if (command == "")
+            {
+                return;
+            }
 
             // Check that the command was not a base command, i.e 'exit', 'back' etc
             string t = _baseConsole.PushCommand(command);
@@ -76,4 +78,7 @@ public class ConsoleText : MonoBehaviour
 
         _rows++;
     }
+
+    public TextMeshProUGUI Text { get { return _text; } }
+    public TMP_InputField InputLine { get { return _input; } }
 }
